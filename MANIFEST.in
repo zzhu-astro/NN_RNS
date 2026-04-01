@@ -1,0 +1,2 @@
+include README.md
+recursive-include src/nn_rns/NN *.npy *.pth
