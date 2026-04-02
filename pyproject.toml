@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nn-rns"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Neural-network surrogate models for rotating neutron star sequences."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -16,7 +16,7 @@ dependencies = [
 authors = [
   { name = "NN_RNS contributors" },
 ]
-keywords = ["neutron-star", "equation-of-state", "pytorch", "surrogate-model"]
+keywords = ["neutron-star", "equation-of-state", "pytorch"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
@@ -28,6 +28,11 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Scientific/Engineering :: Physics",
 ]
+
+[project.urls]
+Homepage = "https://github.com/zzhu-astro/NN_RNS"
+Repository = "https://github.com/zzhu-astro/NN_RNS"
+Issues = "https://github.com/zzhu-astro/NN_RNS/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -41,8 +46,14 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.dynamic]
+version = {attr = "nn_rns._version.__version__"}
+
 [tool.setuptools.package-data]
 nn_rns = ["NN/*.npy", "NN/*.pth"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["__pycache__/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
