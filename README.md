@@ -109,8 +109,9 @@ mmax, rot = model.compute_m_max(
 
 ## Warning
 
-> Warning: Data after the maximum mass may not be trustworthy due to the lack
-> of training data.
+> [!WARNING]
+> Data after the maximum mass may not be trustworthy due to the lack of
+> training data.
 
 Users should treat post-maximum-mass predictions with caution.
 
