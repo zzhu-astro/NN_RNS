@@ -128,6 +128,6 @@ If you use `nn_rns` in research work or publications, please cite the
 corresponding paper.
 
 ```text
-Author list, "Neural-network reconstruction of rotating neutron stars",
+W. Liu, L. Wang and Z. Zhu, "Reconstruction of fast-rotating neutron star observables with the neural network",
 in preparation.
 ```
