@@ -182,7 +182,7 @@ class RNSNetworks:
             valid_mono_idx = best_idx
             idx_max = idx_max_t
         else:
-            valid_mono_idx = np.concatenate([left_idx[left_mono_idx_s], np.array([0]), right_idx[right_mono_idx_s] ])
+            valid_mono_idx = np.concatenate([left_idx[left_mono_idx_s[0]], np.array([0]), right_idx[right_mono_idx_s[0]] ])
             idx_max = len(left_mono_idx_s)
 
         if valid_mono_idx.size < 4:
@@ -346,7 +346,7 @@ class RNSNetworks:
 
 
 
-    def calculate_observables(
+    def compute_observables(
         self,
         rot_input,
         central_input,
@@ -369,6 +369,7 @@ class RNSNetworks:
             Selects the meaning of rot_input.
         central_input_type : {"nb_c", "e_c", "p_c"}
             Selects the meaning of central_input.
+            The units: nb_c in fm^-3, e_c in g/cm^3 (CGS), p_c in dyn/cm^3 (CGS).
         r_ratio_index : int
             Column index of r_ratio in the observable vector.
         omega_index : int
@@ -576,7 +577,7 @@ class RNSNetworks:
         return out
 
     def _solve_rr_from_omega(self, omega_slice, rr_slice, omega_target):
-        mask = np.isfinite(omega_slice) & np.isfinite(rr_slice)
+        mask = np.isfinite(omega_slice) & np.isfinite(rr_slice) & (rr_slice >= rr_slice[0])
         if np.count_nonzero(mask) < 2:
             return np.nan
 
