@@ -4,19 +4,6 @@
 stars. It evaluates reconstructed neutron-star observables from a user-provided
 equation-of-state (EoS) table.
 
-## Naming
-
-The Python import name is `nn_rns`:
-
-```python
-import nn_rns
-```
-
-For package installation, PyPI normalizes upper/lower case and also treats `-`
-and `_` equivalently. In practice, `nn-rns` and `nn_rns` refer to the same
-project name on PyPI. In this README, we use `nn_rns` consistently because it
-matches the Python import name.
-
 ## Install
 
 You can install `nn_rns` in two common ways.
@@ -128,6 +115,5 @@ If you use `nn_rns` in research work or publications, please cite the
 corresponding paper.
 
 ```text
-W. Liu, L. Wang and Z. Zhu, "Reconstruction of fast-rotating neutron star observables with the neural network",
-in preparation.
+W. Liu, L. Wang and Z. Zhu, "Reconstruction of fast-rotating neutron star observables with the neural network", arXiv e-prints, arXiv:2604.05428 (2026).
 ```
