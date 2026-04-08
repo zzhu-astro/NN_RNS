@@ -11,7 +11,7 @@ You can install `nn_rns` in two common ways.
 ### 1. Install from PyPI
 
 ```bash
-pip install nn_rns
+pip install nn-rns
 ```
 
 ### 2. Install from source
